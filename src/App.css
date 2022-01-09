@@ -1,0 +1,48 @@
+.app{
+  padding: 0;
+  margin: 0;
+}
+.nav-ul{
+  padding: 5px;
+  margin: 0;
+  background-color: aqua;
+  
+}
+
+.nav-ul li a{
+  color: black;
+  padding: 5px;
+  text-decoration: none;
+}
+.nav-ul li{
+  display: inline-block;
+  padding: 15px;
+
+}
+.footer{
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width:99%;
+  background-color: aqua;
+}
+.hh{
+   margin-left: 30%;
+}
+.inputBox{
+
+  display: block;
+  padding: 7px;
+  width: 300px;
+  margin: 25px;
+  border: 1px solid aqua;
+}
+.button{
+  margin-left: 10;
+  background-color: rgba(21, 255, 0, 0.384);
+   margin: 25px;
+  width:150px;
+  padding: 10px;
+  border: 1px solid aqua;
+ 
+}
