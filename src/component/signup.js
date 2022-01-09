@@ -1,30 +1,35 @@
-import React, { useState } from "react";
-import {useNavigate} from "react-router-dom"
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
+
 const Signup = () => {
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [pass, setpass] = useState("");
+ 
+
   const navigate = useNavigate();
-
-
+  useEffect(() => {
+    const auth = localStorage.getItem("user");
+    if (auth) {
+      navigate("/");
+    }
+  });
   const collectdata = async () => {
-    console.log(name, email, pass)
-    let result = await fetch("http://localhost:30010/register",{
+    console.log(name, email, pass);
+    let result = await fetch("http://localhost:30010/register", {
       method: "post",
       body: JSON.stringify({ name, email, pass }),
       headers: {
-        "Content-Type": "application/json"
-      }
+        "Content-Type": "application/json",
+      },
     });
     result = await result.json();
     console.warn(result);
-    if (result) {
-      navigate("/")
-    }
+    localStorage.setItem("user", JSON.stringify(result));
+    navigate("/");
   };
- 
-
-
+  
 
   return (
     <div className="hh">
